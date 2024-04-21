@@ -1,0 +1,13 @@
+# Load the sample dataset
+import pandas as pd
+import matplotlib.pyplot as plt
+pd.set_option('display.max_columns', 40)
+data = pd.read_csv('https://www.dropbox.com/scl/fi/e2ba01tfo9f04w9h015hf/sample.csv?rlkey=4srtr28a3wpdil3eygsneiscx&dl=1')
+
+
+plt.hist(data[data['hospital_mortality'] == 1]['age'], bins=5)
+plt.title('Age of Non-Surviving Patients')
+plt.xlabel('Age')
+plt.ylabel('Count')
+plt.savefig('age_histogram.pdf')
+plt.show()
